@@ -6,20 +6,20 @@ class Editor extends React.Component {
   sendToState(event) {
     this.props.mirrorState(event.target.value)
   }
-  
+
   render(){
-    
-  let def = "test";
-    
+          
   return(
     <div className="page">
-      <TopBar>
-        <div></div>
-      </TopBar>
+
+      <TopBar></TopBar>
       <textarea
         className="text-area"
+        id="editor"
         onChange={this.sendToState.bind(this)}
-      >{def}</textarea>
+        defaultValue={this.props.editorText}
+
+      ></textarea>
     </div>
     )
   }

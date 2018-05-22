@@ -3,6 +3,7 @@ import './App.css';
 import Editor from "./components/Editor";
 import Preview from "./components/Preview";
 import Header from "./components/Header";
+// import sampleText from "../src/sampleText"
 
 class App extends Component {
   
@@ -11,7 +12,7 @@ class App extends Component {
     
     this.mirrorState = this.mirrorState.bind(this);
     this.state = {
-      preview: ''
+      text: 'sampleText'
     };
   }
   
@@ -34,9 +35,12 @@ class App extends Component {
         <div className="pages">
           <Editor
             mirrorState={this.mirrorState}
+            editorText={this.state.text}
+            name={"Editor"}
           />
           <Preview
             editorText={this.state.text}
+            name={"Preview"}
           />
         </div>
       </div>

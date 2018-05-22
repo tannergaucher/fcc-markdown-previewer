@@ -24,7 +24,10 @@ class Preview extends React.Component {
       <div className="page">
         <TopBar/>
         <div className="text-area">
-          <span dangerouslySetInnerHTML={this.rawMarkup()}/>
+          <span 
+            dangerouslySetInnerHTML={this.rawMarkup()}
+            id="preview"
+          />
         </div>
       </div>
     )
