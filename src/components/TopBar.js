@@ -16,17 +16,14 @@ class TopBar extends React.Component {
       className="icon none"
       icon={faCompress}
                    />;
-    
-               
-                 
-        return (
-        <div className="top-bar">
-          {expand} 
-          {compress} 
-          <div className="name"></div>
-        </div>
-      )
-    
+     
+    return (
+      <div className="top-bar">
+        {expand} 
+        {compress} 
+        <div className="name"></div>
+      </div>
+    )
   }
 }
 
