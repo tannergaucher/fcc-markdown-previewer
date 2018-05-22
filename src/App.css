@@ -23,6 +23,12 @@ html {
 .preview {
   flex: 1;
   background: #fafafa;
+  overflow-y: scroll;
+}
+
+.top-bar {
+  height: 20px;
+  background: #fafafafa;
 }
 
 

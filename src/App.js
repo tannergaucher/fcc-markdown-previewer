@@ -10,13 +10,13 @@ class App extends Component {
     
     this.mirrorState = this.mirrorState.bind(this);
     this.state = {
-      fromEditor: ''
+      editor: ''
     };
   }
   
   mirrorState(text){
     this.setState({
-      fromEditor: text
+      text
     });
   }
   
@@ -26,7 +26,9 @@ class App extends Component {
         <Editor
           mirrorState={this.mirrorState}
         />
-        <Preview/>
+        <Preview
+          editorText={this.state.text}
+        />
       </div>
       );
     }
