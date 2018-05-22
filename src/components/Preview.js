@@ -1,5 +1,6 @@
 import React from "react";
 import marked from "marked";
+import TopBar from "./TopBar"
 
 class Preview extends React.Component {
   
@@ -16,13 +17,17 @@ class Preview extends React.Component {
       
       return {__html: rawMarkup };
     }
-  
   }
   render(){
     
     return(
-      <div className="preview views">
-        <span dangerouslySetInnerHTML={this.rawMarkup()} />
+      <div className="page">
+        <TopBar/>
+        <div className="text-area">
+          <span 
+            dangerouslySetInnerHTML={this.rawMarkup()}
+          />
+        </div>
       </div>
     )
   }

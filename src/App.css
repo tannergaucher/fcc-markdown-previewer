@@ -4,31 +4,97 @@ html {
 
 .App {
   display: flex;
-  height: calc(100vh - 40px);
-  padding: 20px;
+  flex-direction: column;
+  height: 100vh;
+  background: rgba(0, 0, 0, .03);
 }
 
-.views {
-  border-radius: 5px;
-  border: .5px solid rgba(0, 0, 0, .5);
-  padding:  10px 20px;
-  font-size: 18px;
+.header {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
 }
 
-.editor {
+.header p {
+  margin-left: 20px;
+  margin-top: 25px;
+}
+
+.header svg {
+  margin-left: 25px;
+  margin-top: 10px;
+  font-size: 24px;
+  color: #2A6118;
+}
+
+.pages{
+  display: flex;
+  height: 100%;
+  padding: 10px;
+}
+
+.page {
   flex: 1;
-  margin-right: 20px;
+  border: .5px solid rgba(0, 0, 0, .5);
+  border-top: none;
+  font-size: 18px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, .1);
+  margin-left: 15px;
+  border-radius: 5px 5px 0 0;
+  overflow-y: scroll;
+
+}
+
+.text-area {
+  padding: 10px;
 }
 
 .preview {
   flex: 1;
   background: #fafafa;
   overflow-y: scroll;
+  border-radius: 5px 5px 0 0;
+}
+
+textarea{
+  width: calc(100% - 22px);
+  resize: none;
+  padding: 10px;
+  font-size: 20px;
+  height: calc(100vh - 110px);
+  resize: none;
 }
 
 .top-bar {
   height: 20px;
-  background: #fafafafa;
+  background: #EEF0F0;
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px;
+  border: 1px solid rgba(0, 0, 0, .5);
+  border-radius: 5px 5px 0 0;
 }
+
+.icon:hover{
+  font-size: 20px;
+}
+
+::-webkit-scrollbar {
+  display:none;
+}
+
+.none {
+  display: none;
+}
+
+/* .expanded{
+  flex: 5
+}
+
+.compressed {
+  flex: 1
+} */
+
 
 

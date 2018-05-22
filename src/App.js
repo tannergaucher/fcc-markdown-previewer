@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Editor from "./components/Editor";
 import Preview from "./components/Preview";
+import Header from "./components/Header";
 
 class App extends Component {
   
@@ -10,7 +11,7 @@ class App extends Component {
     
     this.mirrorState = this.mirrorState.bind(this);
     this.state = {
-      editor: ''
+      preview: ''
     };
   }
   
@@ -20,15 +21,24 @@ class App extends Component {
     });
   }
   
+  windowSize(window){
+    this.setState({
+      window
+    });
+  }  
+  
   render() {
     return (
       <div className="App">
-        <Editor
-          mirrorState={this.mirrorState}
-        />
-        <Preview
-          editorText={this.state.text}
-        />
+        <Header/>
+        <div className="pages">
+          <Editor
+            mirrorState={this.mirrorState}
+          />
+          <Preview
+            editorText={this.state.text}
+          />
+        </div>
       </div>
       );
     }
