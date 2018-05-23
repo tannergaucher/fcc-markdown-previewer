@@ -1,6 +1,5 @@
 import React from "react";
 import marked from "marked";
-import TopBar from "./TopBar"
 
 class Preview extends React.Component {
   
@@ -12,6 +11,7 @@ class Preview extends React.Component {
   rawMarkup(){
     
     if(this.props.editorText){
+      
       let text = this.props.editorText;
       let rawMarkup = marked(text, {sanatize: true});
       
@@ -20,18 +20,13 @@ class Preview extends React.Component {
   }
   render(){
     
-    return(
-      <div className="page">
-        <TopBar/>
-        <div className="text-area">
-          <span 
-            dangerouslySetInnerHTML={this.rawMarkup()}
-            id="preview"
-          />
-        </div>
-      </div>
-    )
+  return(
+        <span 
+          dangerouslySetInnerHTML={this.rawMarkup()}
+          id="preview"
+        />
+        )
+      }
   }
-}
 
 export default Preview;

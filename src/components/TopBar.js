@@ -4,11 +4,11 @@ import faExpand from '@fortawesome/fontawesome-free-solid/faExpand';
 import faCompress from '@fortawesome/fontawesome-free-solid/faCompress';
 
 class TopBar extends React.Component {
-
+  
   render(){
         
     let expand = <FontAwesomeIcon 
-      className="icon none"
+      className="icon"
       icon={faExpand}
                  />;
                
@@ -19,9 +19,15 @@ class TopBar extends React.Component {
      
     return (
       <div className="top-bar">
-        {expand} 
-        {compress} 
-        <div className="name"></div>
+        <div className="name">
+          {this.props.name}
+        </div>
+        <div 
+          className="icons"
+        >
+          {expand} 
+          {compress}
+        </div>
       </div>
     )
   }

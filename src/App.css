@@ -43,7 +43,6 @@ html {
   margin-left: 15px;
   border-radius: 5px 5px 0 0;
   overflow-y: scroll;
-
 }
 
 .text-area {
@@ -76,6 +75,11 @@ textarea{
   border-radius: 5px 5px 0 0;
 }
 
+.name {
+  margin-right: auto;
+  padding-left: 5px;
+}
+
 .icon:hover{
   font-size: 20px;
 }
@@ -88,13 +92,32 @@ textarea{
   display: none;
 }
 
-/* .expanded{
-  flex: 5
+.expanded {
+  flex: 5;
 }
 
 .compressed {
-  flex: 1
-} */
+  flex: 1;
+}
+
+@media(max-width: 992px) {
+  
+  
+}
+
+@media(max-width: 768px) {
+
+  .pages{
+    flex-direction: column;
+  }
+  
+}
+
+@media(max-width: 480px) {
+
+  
+}
+
 
 
 

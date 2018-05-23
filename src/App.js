@@ -3,16 +3,18 @@ import './App.css';
 import Editor from "./components/Editor";
 import Preview from "./components/Preview";
 import Header from "./components/Header";
+import TopBar from "./components/TopBar"
 // import sampleText from "../src/sampleText"
 
 class App extends Component {
   
   constructor(){
     super()
-    
     this.mirrorState = this.mirrorState.bind(this);
+    this.toggleClass = this.toggleClass.bind(this);
     this.state = {
-      text: 'sampleText'
+      text: "# Test",
+      active: false
     };
   }
   
@@ -26,6 +28,11 @@ class App extends Component {
     this.setState({
       window
     });
+  }
+  
+  toggleClass(){
+    const currentState = this.state.active;
+    this.setState({active: !currentState});
   }  
   
   render() {
@@ -33,15 +40,28 @@ class App extends Component {
       <div className="App">
         <Header/>
         <div className="pages">
-          <Editor
-            mirrorState={this.mirrorState}
-            editorText={this.state.text}
-            name={"Editor"}
-          />
-          <Preview
-            editorText={this.state.text}
-            name={"Preview"}
-          />
+          <div 
+            className="page" 
+            id="editor"
+          >
+            <TopBar
+              name={"Editor"}
+            />
+            <Editor
+              mirrorState={this.mirrorState}
+              editorText={this.state.text}
+            />
+          </div>
+          <div className="page" id="preview">
+            <TopBar
+              name={"Preview"}
+            />
+            <div className="text-area">
+              <Preview
+                editorText={this.state.text}
+              />
+            </div>
+          </div>
         </div>
       </div>
       );
