@@ -11,10 +11,8 @@ class App extends Component {
   constructor(){
     super()
     this.mirrorState = this.mirrorState.bind(this);
-    this.toggleClass = this.toggleClass.bind(this);
     this.state = {
       text: "# Test",
-      active: false
     };
   }
   
@@ -23,11 +21,7 @@ class App extends Component {
       text
     });
   }
-  
-  toggleClass(){
-    const currentState = this.state.active;
-    this.setState({active: !currentState});
-  }  
+    
   
   render() {
     return (
@@ -38,13 +32,10 @@ class App extends Component {
           <Editor
             mirrorState={this.mirrorState}
             editorText={this.state.text}
-            active={this.state.active}
-            toggleClass={this.toggleClass}
           />
 
           <Preview
             editorText={this.state.text}
-            active={this.state.active}
             toggleClass={this.toggleClass}
           />
 

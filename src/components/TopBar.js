@@ -8,13 +8,18 @@ class TopBar extends React.Component {
   render(){
         
     let expand = <FontAwesomeIcon 
+      id="expand"
       className="icon"
       icon={faExpand}
+      onClick={this.props.handleClick}
                  />;
                
     let compress = <FontAwesomeIcon 
-      className="icon none"
+      id="compress"
+      className="icon"
       icon={faCompress}
+      onClick={this.props.handleClick}
+
                    />;
      
     return (
@@ -24,7 +29,6 @@ class TopBar extends React.Component {
         </div>
         <div 
           className="icons"
-          onClick={this.props.toggleClass}
         >
           {expand} 
           {compress}

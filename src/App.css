@@ -45,6 +45,14 @@ html {
   overflow-y: scroll;
 }
 
+.expand {
+  flex: 3;
+}
+
+.compress {
+  flex: 1;
+}
+
 .text-area {
   padding: 10px;
 }
@@ -92,13 +100,6 @@ textarea{
   display: none;
 }
 
-.expanded {
-  flex: 3;
-}
-
-.compressed {
-  flex: 1;
-}
 
 @media(max-width: 992px) {
   

@@ -6,6 +6,11 @@ class Preview extends React.Component {
   
   constructor(props){
     super(props);
+    
+    this.state = {
+      view: "page"
+    }
+    
     this.rawMarkup = this.rawMarkup.bind(this);
   }
   
@@ -27,7 +32,7 @@ class Preview extends React.Component {
     >
       <TopBar 
         name={Preview}
-        toggleClass={this.props.toggleClass}
+        handleClick={this.props.handleClick}
       />
       <div className="text-area">
         <span 
