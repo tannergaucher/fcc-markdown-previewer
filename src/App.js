@@ -3,8 +3,7 @@ import './App.css';
 import Editor from "./components/Editor";
 import Preview from "./components/Preview";
 import Header from "./components/Header";
-import TopBar from "./components/TopBar"
-// import sampleText from "../src/sampleText"
+import sampleText from "../src/sampleText"
 
 class App extends Component {
   
@@ -12,7 +11,7 @@ class App extends Component {
     super()
     this.mirrorState = this.mirrorState.bind(this);
     this.state = {
-      text: "# Test",
+      text: sampleText
     };
   }
   
@@ -21,8 +20,7 @@ class App extends Component {
       text
     });
   }
-    
-  
+
   render() {
     return (
       <div className="App">
@@ -36,7 +34,6 @@ class App extends Component {
 
           <Preview
             editorText={this.state.text}
-            toggleClass={this.toggleClass}
           />
 
         </div>

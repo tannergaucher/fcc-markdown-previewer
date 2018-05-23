@@ -17,6 +17,7 @@ class Editor extends React.Component {
   
   handleClick(e){
     let icon = e.target.id;
+    console.log(e.target.id)
     this.setState({view: icon})
   }
 
@@ -26,7 +27,6 @@ class Editor extends React.Component {
     
     <div 
       className={this.state.view}
-      id="editor"
     >
       <TopBar 
         name={"Editor"}

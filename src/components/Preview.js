@@ -12,6 +12,7 @@ class Preview extends React.Component {
     }
     
     this.rawMarkup = this.rawMarkup.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
   
   rawMarkup(){
@@ -23,16 +24,20 @@ class Preview extends React.Component {
       return {__html: rawMarkup };
     }
   }
+  
+  handleClick(e){
+    let icon = e.target.id;
+    console.log(e.target.id)
+    this.setState({view: icon})
+  }
+  
   render(){
     
   return(
-    <div 
-      className="page"
-      id="preview"
-    >
+    <div className={this.state.view}>
       <TopBar 
         name={Preview}
-        handleClick={this.props.handleClick}
+        handleClick={this.handleClick}
       />
       <div className="text-area">
         <span 
@@ -40,7 +45,6 @@ class Preview extends React.Component {
           id="preview"
         />
       </div>
-
     </div>
       )
       }
