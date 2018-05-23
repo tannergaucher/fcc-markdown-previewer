@@ -15,7 +15,8 @@ class Editor extends React.Component {
   return(
     
     <div 
-      className="page"
+      // className="page"
+      className={"page", this.props.active ? "expanded" : "page"}
       id="editor"
     >
       <TopBar 

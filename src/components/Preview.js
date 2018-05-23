@@ -21,7 +21,10 @@ class Preview extends React.Component {
   render(){
     
   return(
-    <div className="page" id="preview">
+    <div 
+      className="page"
+      id="preview"
+    >
       <TopBar 
         name={Preview}
         toggleClass={this.props.toggleClass}
