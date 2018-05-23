@@ -24,12 +24,6 @@ class App extends Component {
     });
   }
   
-  windowSize(window){
-    this.setState({
-      window
-    });
-  }
-  
   toggleClass(){
     const currentState = this.state.active;
     this.setState({active: !currentState});
@@ -40,28 +34,20 @@ class App extends Component {
       <div className="App">
         <Header/>
         <div className="pages">
-          <div 
-            className="page" 
-            id="editor"
-          >
-            <TopBar
-              name={"Editor"}
-            />
-            <Editor
-              mirrorState={this.mirrorState}
-              editorText={this.state.text}
-            />
-          </div>
-          <div className="page" id="preview">
-            <TopBar
-              name={"Preview"}
-            />
-            <div className="text-area">
-              <Preview
-                editorText={this.state.text}
-              />
-            </div>
-          </div>
+
+          <Editor
+            mirrorState={this.mirrorState}
+            editorText={this.state.text}
+            active={this.state.active}
+            toggleClass={this.toggleClass}
+          />
+
+          <Preview
+            editorText={this.state.text}
+            active={this.state.active}
+            toggleClass={this.toggleClass}
+          />
+
         </div>
       </div>
       );

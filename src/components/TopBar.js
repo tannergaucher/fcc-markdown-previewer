@@ -24,6 +24,7 @@ class TopBar extends React.Component {
         </div>
         <div 
           className="icons"
+          onClick={this.props.toggleClass}
         >
           {expand} 
           {compress}

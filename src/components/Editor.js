@@ -1,33 +1,36 @@
 import React from "react";
+import TopBar from "./TopBar";
 
 
 class Editor extends React.Component {
   
-  constructor(props){
-    super(props)
-    this.state = {
-      active: false
-    };
-  }
-  
+
   sendToState(event) {
     this.props.mirrorState(event.target.value)
   }
   
-  toggleClass(){
-    const currentState = this.state.active;
-    this.setState({active: !currentState});
-  }
   
   render(){
           
   return(
+    
+    <div 
+      className="page"
+      id="editor"
+    >
+      <TopBar 
+        name={"Editor"}
+        toggleClass={this.props.toggleClass}
+      />
+
       <textarea
         className="text-area"
         id="editor"
         onChange={this.sendToState.bind(this)}
         defaultValue={this.props.editorText}
       />
+    </div>
+  
     )
   }
 }
